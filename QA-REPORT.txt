@@ -1,0 +1,129 @@
+VYKUY production QA — 2026-10-06
+Release status: READY WITH MINOR MANUAL CHECKS
+
+Scope and environment
+Existing React/TypeScript/Vite portfolio, production preview at port 4173.
+Chromium desktop and touch emulation. Node 24.11.1, Vite 8.3.3.
+No redesign, dependency additions, deployment, original-media edits, or content changes.
+This folder has no Git metadata; source review was file-based rather than a Git diff.
+
+1. Static validation
+PASS: npm run typecheck; npm run build. Strict unused-local/import checks enabled.
+No lint script is configured; no lint stack was added.
+No build warnings, broken imports, or missing active media assets.
+TODO strings exist only in the inactive, intentionally supported project-placeholder
+branch. None appear in the active rendered page. Windows paths occur in media
+documentation only, not production JS/CSS. No accidental debug UI/logs found.
+
+2. Defect found and fixed
+When video sources AND the poster failed, ProjectVideo displayed "Video unavailable"
+but its caption incorrectly said "Demo pending". Changed the caption to
+"Demo unavailable" only for that failure state. Poster-only and not-yet-added states
+retain their existing captions. Intercepted 404 regression passes for all 3 projects.
+
+3. Files changed
+src/components/ProjectVideo.tsx — one conditional caption change.
+QA-REPORT.txt — this report.
+Build output regenerated in dist. Temporary harnesses/screenshots are in ignored
+node_modules/.cache (qa-release.mjs, qa-edge.mjs, qa-details.mjs and qa-*.png).
+
+4. Responsive and visual
+PASS widths: 320, 360, 375, 390, 430, 768, 1024, 1280, 1366, 1440, 1920.
+All sections checked for bounds, clipping, overlapping grid items, tags and controls.
+Full-page captures at every width; section-by-section visual review at representative
+mobile/tablet/desktop breakpoints. No confirmed overflow, overlap or broken layout.
+Typography, project order, media ratios, editorial composition and identity preserved.
+
+5. Navigation and interaction
+PASS all four navigation anchors and both hero CTAs, heading visibility, history
+back/forward, Tab/Shift+Tab, Enter, Space playback controls and skip-to-main link.
+Visible focus remained available; no keyboard trap observed. No menu/modal needs Escape.
+Touch-emulated navigation and single-tap play/pause passed. Existing controls meet
+44px minimum height. No hover-only essential content or viewport-height layout detected.
+
+6. Accessibility
+One H1, logical H2/H3 hierarchy, semantic nav/main/sections, named controls and image
+alternatives verified. Computed text contrast against opaque backgrounds: 210 sampled
+text elements, minimum about 8.24:1; no failures. This is not a formal WCAG certification.
+Reduced motion disables automatic playback; keyboard/manual playback remains usable.
+Changing the preference during playback pauses video. Demos are muted, visual previews;
+project functionality is also described in surrounding text. Native screen-reader and
+real-device checks remain recommended.
+
+7. Project and claim checks
+Featured order: Pitstop, HORECA Training Platform, Access Flow.
+Titles, labels, descriptions, proofs, tags, impact blocks and disclaimers present.
+Pitstop tags exactly: React, TypeScript, FastAPI, Supabase, PostgreSQL, OpenAI,
+PWA, Docker, Railway.
+Metrics unchanged: ~5–10 min / booking; ~1–2 hours / new employee;
+~3–5 min / subscriber. All retain workflow-estimate disclaimers.
+No additional revenue, user-count, verified ROI or measured customer claims found.
+More Projects retains all four approved entries. Proofreading found no clear defect
+requiring a content change.
+
+8. Media
+PASS real WebM playback, MP4 fallback, correct poster/source mapping, full WebM decode,
+muted/loop/playsInline, native controls hidden, custom keyboard/touch controls,
+offscreen pause/resume, manual pause persistence and reserved frame dimensions.
+All original recordings verified unchanged by SHA-256, size and modification time.
+Safe request interception covered missing WebM, missing MP4, missing poster, all media
+unavailable, slow video load, video error events and autoplay denial/manual recovery
+for every featured project. Additional fixtures covered poster-only/no-media states.
+No production assets were broken to test failures.
+
+9. Links and external services
+Central Contact/Footer values match. Email is mailto:endidyfreim@gmail.com.
+Telegram https://t.me/PackChoOi and GitHub https://github.com/GarnikSacsha returned 200.
+LinkedIn https://www.linkedin.com/in/denys-yefimenko returned anti-bot status 999;
+this is not treated as an invalid URL. All external links use target=_blank and
+noopener noreferrer. A simulated unavailable external destination opens in an
+isolated tab without affecting the portfolio. No empty/#/javascript links found.
+Email-client handoff and LinkedIn profile availability still need manual verification;
+no messages or emails were sent.
+
+10. SEO
+Exact requested title and description present. OG/Twitter metadata, image and alt,
+favicon, viewport, lang=en and robots.txt verified. No accidental noindex.
+Public image/favicon/robots resources return correct asset responses, not SPA HTML.
+Final domain remains intentionally unset. Canonical absolute URL, og:url, absolute
+social-image URLs and production sitemap URL remain domain-dependent release setup.
+
+11. Performance (local observations, not field analytics or a Lighthouse score)
+Production JS: 243.97 kB raw / 76.45 kB gzip.
+Production CSS: 21.84 kB raw / 5.43 kB gzip.
+Fonts: Geist 29.40 kB, Alegreya 43.47 kB, locally served WOFF2 with font-display swap.
+Posters: 32.40–75.38 kB. Social preview PNG: 45.59 kB.
+Videos (decimal MB, WebM / MP4):
+  Pitstop: 2.847 / 6.940 (24 seconds)
+  HORECA: 1.297 / 2.033 (22 seconds)
+  Access Flow: 1.727 / 2.754 (15 seconds)
+No initial video requests; playback starts on visibility. No media-frame layout shift.
+Local initial CLS approximately 0.032; local first contentful paint around 200–244 ms.
+These timings are from local headless Chromium, not a production/mobile-network SLA.
+No byte-identical duplicate dist assets or disproportionate third-party JS dependency.
+Pitstop MP4 is the largest asset and a worthwhile optional web-encoding optimization
+for slow connections. It is not an initial-render blocker; prefer generating a smaller
+delivery copy after visual comparison, never modifying the original recording.
+
+12. Errors and edge cases
+Normal production console: no uncaught errors, React warnings or debug logs.
+No local 404s on normal loads. Navigation-aborted video requests are expected browser
+cancellations, not missing resources. Injected failure-test 404s are intentional.
+Delayed JS eventually renders correctly; cache-disabled hard reload works.
+Already-loaded content and anchor navigation remain usable offline. No offline reload
+guarantee: the portfolio intentionally has no manifest/service worker and is not a PWA.
+
+13. Cloudflare Pages
+Build command npm run build; output dist. All runtime assets are inside the project.
+Relative source import casing validated against actual directory entries; no Windows
+absolute paths in built JS/CSS. Hash-anchor navigation requires no application router.
+Public assets are copied into dist. Existing README covers Pages configuration.
+Compatibility was checked locally; no actual Linux/Cloudflare deployment was performed.
+
+14. Remaining manual checks and blockers
+No confirmed unresolved application blocker.
+Complete domain-specific metadata after choosing the domain, then verify social sharing.
+Smoke-test Safari/iOS and Firefox: their Playwright engines are not installed here.
+Check real-device touch, native screen-reader behavior and email-client handoff.
+Confirm LinkedIn in a normal signed-in browser. After deployment, verify HTTPS, asset
+delivery and metadata on the actual Pages URL. Optional: optimize the Pitstop MP4 copy.

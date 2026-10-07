@@ -1,0 +1,50 @@
+@layer components {
+  .more-projects-grid { display: grid; gap: 1rem; }
+  .more-project-card { display: flex; flex-direction: column; min-width: 0; padding: 1.5rem; border: 1px solid var(--border); border-radius: .5rem; background: var(--surface); transition: border-color 160ms ease, background-color 160ms ease; }
+  .more-project-type { font-size: .75rem; letter-spacing: .08em; }
+  .more-project-title { margin-top: .875rem; font-family: var(--font-display); font-size: clamp(1.625rem, 2.4vw, 2rem); font-weight: 600; line-height: 1.15; letter-spacing: -.02em; text-wrap: balance; }
+  .more-project-description { margin-top: 1rem; margin-bottom: 1.5rem; max-width: 36rem; color: var(--text-secondary); font-size: .875rem; line-height: 1.8; }
+  .more-project-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: auto; }
+  .more-project-tags span { padding: .375rem .625rem; font-size: .75rem; }
+  .more-project-links { display: flex; flex-wrap: wrap; column-gap: 1.5rem; margin-top: 1rem; }
+  .more-project-links a { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; font-size: .8125rem; text-decoration: underline; text-underline-offset: .25em; }
+  .more-project-poster { aspect-ratio: 16 / 9; max-height: 10rem; overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--border); border-radius: .25rem; }
+  .more-project-poster img { width: 100%; height: 100%; object-fit: contain; }
+  .build-introduction { max-width: 46rem; color: var(--text-secondary); font-size: 1rem; line-height: 1.85; }
+  .build-process { position: relative; display: grid; margin-top: 2.5rem; }
+  .build-process::before { content: ''; position: absolute; top: 0; left: 0; width: 5rem; height: 1px; background: var(--accent-gradient); }
+  .build-step { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: 1rem; padding-block: 1.75rem; border-top: 1px solid var(--border); }
+  .build-step:last-child { padding-bottom: 0; }
+  .build-step-number { color: var(--text-secondary); font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+  .build-step-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; line-height: 1.2; text-wrap: balance; }
+  .build-step-description { max-width: 40rem; margin-top: .75rem; color: var(--text-secondary); font-size: .8125rem; line-height: 1.8; }
+  .capability-grid { display: grid; gap: 2rem; }
+  .capability-group { min-width: 0; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  .capability-title { color: var(--text-secondary); font-size: .75rem; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; }
+  .capability-technologies { display: flex; flex-wrap: wrap; gap: .625rem 1.25rem; margin-top: 1rem; font-size: .9375rem; line-height: 1.6; }
+}
+
+@media (hover: hover) {
+  .more-project-card:hover { border-color: var(--text-muted); background: var(--surface-elevated); }
+}
+
+@media (min-width: 640px) {
+  .more-project-card { padding: 2rem; }
+  .capability-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 2rem; }
+  .build-step { grid-template-columns: 3rem minmax(0, 1fr); gap: 1.5rem; padding-block: 2rem; }
+  .build-step-number { font-size: 3rem; }
+}
+
+@media (min-width: 768px) {
+  .more-projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .capability-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3rem 2.5rem; }
+}
+
+@media (min-width: 1280px) {
+  .build-process { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.5rem; margin-top: 3rem; border-top: 1px solid var(--border); }
+  .build-step { display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; border-top: 0; padding-top: 2rem; padding-bottom: 0; }
+  .build-step-title { min-height: 2.4em; font-size: 1.375rem; }
+}

@@ -1,0 +1,28 @@
+node_modules/
+dist/
+*.local
+.env
+.env.*
+*.tsbuildinfo
+
+# Tool caches and generated reports
+.cache/
+.vite/
+.vite-temp/
+.npm/
+.turbo/
+coverage/
+playwright-report/
+test-results/
+*.log
+
+# Local tooling and operating system files
+.codex/
+.agents/
+.aws/
+.wrangler/
+.DS_Store
+Thumbs.db
+
+# Original recordings; production media lives in src/assets/projects/
+/Projects/

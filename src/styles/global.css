@@ -1,0 +1,118 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Alegreya Variable';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('@fontsource-variable/alegreya/files/alegreya-latin-wght-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Geist Variable';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('@fontsource-variable/geist/files/geist-latin-wght-normal.woff2') format('woff2');
+}
+
+:root {
+  color-scheme: dark;
+  --background: #07090D;
+  --surface: #0D1117;
+  --surface-elevated: #121722;
+  --border: #1C2330;
+  --text-primary: #F7F9FC;
+  --text-secondary: #A2ACBA;
+  --text-muted: #697586;
+  --accent-cyan: #27E7E2;
+  --accent-blue: #32A7FF;
+  --accent-indigo: #5D5CFF;
+  --accent-violet: #743CEB;
+  --accent-gradient: linear-gradient(110deg, var(--accent-cyan), var(--accent-blue), var(--accent-indigo), var(--accent-violet));
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-border: var(--border);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --font-display: 'Alegreya Variable', Georgia, serif;
+  --font-sans: 'Geist Variable', system-ui, sans-serif;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+  body { margin: 0; min-width: 320px; background: var(--background); color: var(--text-primary); font-family: var(--font-sans); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--accent-cyan); color: var(--background); }
+  :focus-visible { outline: 2px solid var(--accent-cyan); outline-offset: 5px; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  button { cursor: pointer; }
+  button:disabled { cursor: not-allowed; opacity: .5; }
+}
+
+@layer components {
+  .site-header { border-bottom: 1px solid var(--border); }
+  .header-layout { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; padding-block: 1.25rem .75rem; }
+  .wordmark { display: inline-flex; align-items: center; gap: .75rem; min-height: 44px; font-size: 1.25rem; font-weight: 600; letter-spacing: .16em; line-height: 1; }
+  .brand-mark { flex: none; }
+  .header-nav { width: 100%; }
+  .header-nav-list { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .25rem .75rem; }
+  .header-nav-link { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; font-size: .8125rem; font-weight: 500; text-underline-offset: .45em; }
+  .header-nav-link:hover { text-decoration: underline; }
+  .hero { position: relative; isolation: isolate; padding-block: 4.5rem 4rem; }
+  .hero::before { content: ''; position: absolute; z-index: -1; pointer-events: none; inset: 0; background: radial-gradient(ellipse at 90% 25%, color-mix(in srgb, var(--accent-indigo) 6%, transparent), transparent 55%); }
+  .hero-content { position: relative; }
+  .hero-role { display: flex; align-items: center; gap: .75rem; margin-bottom: 1.75rem; }
+  .hero-role::before { content: ''; width: 1.5rem; height: 1px; flex: none; background: var(--accent-cyan); }
+  .hero-title { max-width: 100%; font-family: var(--font-display); font-size: clamp(3.25rem, 7.2vw, 6.5rem); font-weight: 700; line-height: 1.06; letter-spacing: -.035em; }
+  .hero-title-line { display: block; text-wrap: balance; }
+  .hero-description { max-width: 34rem; margin-top: 1.75rem; color: var(--text-secondary); font-size: 1rem; line-height: 1.75; text-wrap: pretty; }
+  .hero-actions { display: grid; gap: .75rem; margin-top: 2rem; }
+  .hero-actions .button { min-height: 52px; padding-inline: 1.25rem; }
+  .hero-technologies { display: flex; flex-wrap: wrap; row-gap: .5rem; margin-top: 2.5rem; color: var(--text-secondary); font-size: .75rem; line-height: 1.8; }
+  .hero-technology { white-space: nowrap; }
+  .technology-separator { padding-inline: .5rem; }
+  .eyebrow { color: var(--text-secondary); font-size: .75rem; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
+  .section-title { font-family: var(--font-display); font-size: clamp(2.25rem, 4vw, 3.5rem); font-weight: 600; line-height: 1.12; letter-spacing: -.025em; }
+  .nav-link { color: var(--text-secondary); transition: color 160ms ease; }
+  .nav-link:hover { color: var(--accent-cyan); }
+  .button { display: inline-flex; align-items: center; justify-content: center; gap: 1rem; min-height: 48px; padding: .75rem 1.4rem; border: 1px solid var(--text-muted); border-radius: .375rem; font-size: .875rem; font-weight: 600; transition: background-color 160ms ease, border-color 160ms ease; }
+  .button--primary { background: var(--text-primary); color: var(--background); border-color: var(--text-primary); }
+  .button--primary:hover { background: var(--accent-cyan); border-color: var(--accent-cyan); }
+  .button--secondary { background: transparent; color: var(--text-primary); }
+  .button--secondary:hover { background: var(--surface-elevated); border-color: var(--accent-blue); }
+  .skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 50; padding: .75rem 1rem; background: var(--text-primary); color: var(--background); transform: translateY(-200%); }
+  .skip-link:not(:focus) { clip-path: inset(50%); }
+  .skip-link:focus { transform: translateY(0); }
+}
+
+@media (min-width: 360px) {
+  .hero-actions { display: flex; flex-wrap: wrap; }
+}
+
+@media (min-width: 640px) {
+  .header-layout { flex-direction: row; align-items: center; justify-content: space-between; gap: 2rem; padding-block: 1.5rem; }
+  .header-nav { width: auto; }
+  .header-nav-list { gap: 1.5rem; }
+  .header-nav-link { font-size: .875rem; }
+  .hero { padding-block: 6.5rem 5rem; }
+  .hero-role { margin-bottom: 2rem; }
+  .hero-description { margin-top: 2rem; font-size: 1.125rem; }
+  .hero-actions { margin-top: 2.25rem; }
+  .hero-actions .button { padding-inline: 1.5rem; }
+  .hero-technologies { margin-top: 3.5rem; font-size: .8125rem; }
+}
+
+@media (min-width: 1024px) {
+  .header-nav-list { gap: 2.25rem; }
+  .hero { padding-block: 7.5rem 6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
