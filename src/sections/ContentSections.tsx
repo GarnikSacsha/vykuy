@@ -1,7 +1,7 @@
 import { Button } from '../components/Button'
 import { Section } from '../components/Section'
 import { contactLinks } from '../data/contact'
-import { aboutContent, sections, site } from '../data/site'
+import { aboutContent, sections } from '../data/site'
 import '../styles/closing-sections.css'
 
 export function About() {
@@ -19,8 +19,8 @@ export function Contact() {
         const external = link.href.startsWith('https:')
         return <Button key={link.channel} href={link.href} variant={link === primary ? 'primary' : 'secondary'}
           target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}
-          aria-label={`${link === primary ? `${site.secondaryCta} via ` : ''}${link.label}${external ? ' (opens in a new tab)' : ''}`}>
-          {link === primary ? site.secondaryCta : link.label}<span aria-hidden="true">↗</span>
+          aria-label={`${link.label}${external ? ' (opens in a new tab)' : ''}`}>
+          {link.label}<span aria-hidden="true">↗</span>
         </Button>
       })}
     </div>}

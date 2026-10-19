@@ -7,7 +7,7 @@ export function Stack() {
   return <Section content={sections.stack}>
     <div className="capability-grid">
       {capabilities.map(group => <div className="capability-group" key={group.id}>
-        <h3 className="capability-title">{group.title}</h3>
+        <h3 className="capability-title">{group.id === 'data' ? 'Database' : group.id === 'delivery' ? 'Infrastructure' : group.id === 'automation' ? 'Automation' : group.title}</h3>
         <ul className="capability-technologies" aria-label={group.title}>
           {group.technologies.map(technology => <li key={technology}>{technology}</li>)}
         </ul>

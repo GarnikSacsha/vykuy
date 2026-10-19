@@ -1,22 +1,30 @@
-import { Button } from '../components/Button'
 import { Container } from '../components/Container'
-import { site } from '../data/site'
+import { contactLinks } from '../data/contact'
+import { SystemTopology } from '../components/SystemTopology'
 
 export function Hero() {
-  return (
-    <section aria-labelledby="hero-title" className="hero">
-      <Container className="hero-content">
-        <p className="eyebrow hero-role">{site.role}</p>
-        <h1 id="hero-title" className="hero-title">
-          {site.headline.map((line, index) => <span className="hero-title-line" key={line}>{index > 0 && ' '}{line}</span>)}
-        </h1>
-        <p className="hero-description">{site.description}</p>
-        <div className="hero-actions">
-          <Button href="#work">{site.primaryCta}<svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10H16M11 5L16 10L11 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg></Button>
-          <Button href="#contact" variant="secondary">{site.secondaryCta}</Button>
+  const github = contactLinks.find(link => link.channel === 'github')
+
+  return <section aria-labelledby="hero-title" className="hero">
+    <Container className="hero-content">
+      <p className="eyebrow hero-role">Denys Yefimenko <span>/</span> AI & Automation Engineer</p>
+      <h1 id="hero-title" className="hero-title">
+        <span>Building systems</span><span> that actually work<span className="hero-period">.</span></span>
+      </h1>
+      <div className="hero-system-layout">
+        <SystemTopology />
+        <div className="hero-support">
+          <p className="hero-principle">Complex systems.<br /> Intentionally connected.</p>
+          <p className="hero-description">Python backend, AI integrations, automation, and full-stack products — from architecture to deployment.</p>
+          {github && <a href={github.href} className="text-link hero-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)">
+            GitHub <span aria-hidden="true">↗</span>
+          </a>}
         </div>
-        <p className="hero-technologies">{site.technologies.map((technology, index) => <span key={technology} className="hero-technology">{technology}{index < site.technologies.length - 1 && <span className="technology-separator" aria-hidden="true"> · </span>}</span>)}</p>
-      </Container>
-    </section>
-  )
+      </div>
+      <div className="hero-footnote">
+        <span>Independent engineering / Chernivtsi, Ukraine</span>
+        <a href="#work">Scroll to explore <span aria-hidden="true">↓</span></a>
+      </div>
+    </Container>
+  </section>
 }

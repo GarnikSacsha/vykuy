@@ -1,0 +1,63 @@
+VYKUY visual redesign — 2026-10-19
+
+Implemented in D:\Aivora on main; no commit, push, or deployment.
+
+Design
+Monochrome palette, locally hosted Geist, finite SVG grid entrance, circular
+work CTA, three featured project compositions, native expandable case studies,
+secondary project index, technical process timeline, typographic capabilities,
+editorial About and Contact. CSS and SVG only; no new dependencies.
+All seven projects, original project data, metrics and estimate disclaimers,
+media, contact URLs, video component, SEO and Cloudflare headers are preserved.
+
+Changed files
+src/App.tsx
+src/components/Container.tsx
+src/components/Section.tsx
+src/components/ProjectCaseStudy.tsx
+src/data/site.ts
+src/sections/Header.tsx
+src/sections/Hero.tsx
+src/sections/MoreProjects.tsx
+src/sections/HowIBuild.tsx
+src/sections/Stack.tsx
+src/sections/ContentSections.tsx
+src/styles/global.css
+src/styles/projects.css
+src/styles/secondary-sections.css
+src/styles/closing-sections.css
+README.md
+QA-REDESIGN.txt
+
+Validation
+PASS npm run typecheck.
+PASS npm run build, including TypeScript; final JS 245.08 kB / 76.70 kB gzip,
+CSS 22.04 kB / 5.78 kB gzip. No build warnings.
+Initial sandboxed build failed with spawn EPERM; approved unsandboxed build passed.
+PASS git diff --check (only Git line-ending notices).
+No lint or test scripts are configured in package.json.
+
+Local Chromium checks at http://127.0.0.1:4173/
+PASS no horizontal overflow at 320, 375, 768, 1024, 1440 and 1920 px.
+PASS full-page screenshots plus visual inspection of desktop/mobile pages,
+desktop/mobile hero and tablet Access Flow composition.
+PASS three featured projects and four additional projects present, one H1.
+PASS all seven disclosures open and close using Enter.
+PASS all three real videos play, advance time and pause using their controls.
+PASS reduced-motion prevents autoplay; normal visibility starts playback;
+offscreen video pauses.
+PASS work anchor, skip-to-main focus, Tab from brand to Work, Enter navigation.
+PASS all disclosures expanded at 320 px without horizontal overflow.
+PASS four contact links rendered; existing email destination confirmed.
+PASS no page errors or HTTP errors in the main browser run.
+One supplementary focus probe timed out because no element had focus;
+the explicit-focus keyboard check passed without a production change.
+
+Temporary harnesses/screenshots are in ignored node_modules/.cache/redesign-*.
+Existing QA-REPORT.txt concerns the previous design, not this verification pass.
+
+Limits
+Firefox, Safari/iOS, physical devices, native screen reader, external contact
+destinations, live deployment, Lighthouse and formal accessibility audit were
+not checked. Existing media fallback logic was unchanged; failure injection
+was not repeated during this redesign. No production-domain changes were made.

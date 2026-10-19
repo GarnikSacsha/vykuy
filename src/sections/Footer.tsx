@@ -1,4 +1,5 @@
 import { Container } from '../components/Container'
+import { TopologyMark } from '../components/TopologyMark'
 import { site } from '../data/site'
 import { socialLinks } from '../data/contact'
 import '../styles/closing-sections.css'
@@ -6,7 +7,7 @@ import '../styles/closing-sections.css'
 export function Footer() {
   return <footer className="site-footer"><Container className="footer-layout">
     <div className="footer-identity">
-      <a href="#top" aria-label={`${site.brand} — back to top`} className="footer-brand">{site.brand}</a>
+      <a href="#top" aria-label={`${site.brand} — back to top`} className="footer-brand"><TopologyMark />{site.brand}</a>
       <p>© {new Date().getFullYear()} {site.name}</p>
     </div>
     {socialLinks.length > 0 && <ul className="footer-socials">

@@ -23,8 +23,8 @@ export const sections = {
   more: { id: 'more-projects', label: '02 / Further exploration', title: 'More Projects' },
   process: { id: 'how-i-build', label: '03 / Approach', title: 'How I Build' },
   stack: { id: 'stack', label: '04 / Tools & capabilities', title: 'Stack / Capabilities' },
-  about: { id: 'about', label: '05 / About', title: 'Building useful systems, not just demos.' },
-  contact: { id: 'contact', label: '06 / Contact', title: 'Have a product idea or an automation problem?', description: 'Let’s talk about what you’re trying to build, automate, or improve.' },
+  about: { id: 'about', label: '05 / About', title: 'Engineer by practice. Builder by mindset.' },
+  contact: { id: 'contact', label: '06 / Contact', title: 'Have something worth building?', description: 'Open to remote engineering opportunities, collaborations, and selected automation projects.' },
 } satisfies Record<string, SectionContent>
 
 export const aboutContent = {

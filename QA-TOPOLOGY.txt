@@ -1,0 +1,60 @@
+VYKUY / System Topology — Phase 2 — 2026-10-19
+
+Scope
+Iteration on the existing uncommitted redesign in D:\Aivora, branch main.
+Replaced the perspective grid with a deterministic SVG topology. Two angular
+service paths converge into the preserved outlined Explore Work circle.
+Moved the headline into an offset upper composition, diagram below left,
+supporting message and GitHub below right. Responsive mobile layout stacks
+these zones. No project data, media, contact URLs, SEO, dependencies or
+deployment/security configuration were changed.
+
+Shared identity
+Small V-shaped route mark in section labels, featured numbering and footer.
+Subtle corner framing on media. Project-index hover/focus/open states use a
+converging chevron. Process steps use connected angular paths on desktop and
+the existing vertical timeline on small screens. Capabilities use small nodes.
+
+Phase 2 files
+Added src/components/SystemTopology.tsx, src/components/TopologyMark.tsx,
+src/styles/topology.css and QA-TOPOLOGY.txt.
+Updated src/sections/Hero.tsx, src/sections/Footer.tsx,
+src/sections/HowIBuild.tsx, src/components/Section.tsx,
+src/components/ProjectCaseStudy.tsx, src/App.tsx, src/styles/global.css
+and README.md. Prior Phase 1 changes remain intact.
+
+Checks
+PASS npm run typecheck.
+PASS npm run build (includes tsc); no build warnings.
+Final JS 247.69 kB / 77.38 kB gzip; CSS 26.38 kB / 6.69 kB gzip.
+PASS git diff --check (Git only reports line-ending normalization notices).
+No project lint or test script is configured; no test dependencies added.
+
+Local Chromium at http://127.0.0.1:4173/
+PASS route dash offset progresses while the diagram is visible.
+PASS manual pause/resume changes animation-play-state and resumes flow.
+PASS leaving the viewport pauses the flow.
+PASS changing reduced-motion live stops motion, hides pulses and disables
+the motion toggle with a Static view label. All content/CTA stays available.
+PASS no horizontal overflow at 320, 375, 600, 768, 1024, 1440 and 1920 px.
+PASS visual review of 320/375/768/1440 hero screenshots and process section.
+PASS Explore Work navigates to #work; all four project-index disclosures
+open/close with Enter. All seven projects remain present.
+PASS regression harness: all three videos play and pause, offscreen pause,
+visibility autoplay, reduced-motion manual playback, all seven disclosures,
+work anchor, four contact links, single H1, no page or HTTP errors.
+
+Implementation review
+No per-frame JavaScript, random geometry, animation library or global timers.
+Observers and visibility/preference listeners are cleaned up on unmount.
+Missing IntersectionObserver degrades to the static scene. The page-visibility
+pause branch was inspected in source; hidden-tab behavior was not automated.
+Decorative SVGs are aria-hidden; motion control is a native toggle button.
+
+Limits
+Safari/Firefox, physical devices and a native screen reader were not tested.
+No live deployment, external-contact verification or formal accessibility audit.
+The supplied Phase 2 brief ends mid-sentence in How I Build; completed the
+available requirements without inventing additional unseen requirements.
+Temporary browser scripts/screenshots: ignored node_modules/.cache/topology-*.
+No commit, push or deployment performed.

@@ -25,7 +25,15 @@ npm run preview
 - `src/styles/global.css`: exact brand tokens, Tailwind theme mapping, typography, focus and reduced-motion rules.
 - `src/assets/`: guidance for real media assets.
 
-Alegreya and Geist Latin variable fonts are self-hosted through Fontsource. No runtime font CDN, router, backend, UI kit, icon package, or animation library is required. Tailwind uses its official Vite plugin: https://tailwindcss.com/docs/installation/using-vite.
+Geist Latin variable font is self-hosted through Fontsource. No runtime font CDN, router, backend, UI kit, icon package, or animation library is required. Tailwind uses its official Vite plugin: https://tailwindcss.com/docs/installation/using-vite.
+
+## Visual system (October 2026)
+
+The portfolio uses a monochrome engineering/editorial layout: #050505 background, #0D0D0D surfaces, #F5F5F5 primary text, #999999 secondary text, and restrained cyan interaction accents. The hero uses an original SVG system topology: asymmetric routes converge in a V into the circular work link. Typography occupies the upper editorial composition, with the diagram below left and supporting text to the right. There is no perspective grid.
+
+SystemTopology uses fixed geometry and CSS flow pulses, with no per-frame React state updates. IntersectionObserver and document visibility pause motion outside the viewport or in a hidden tab; a user-facing pause toggle also controls motion. Reduced motion produces a static diagram and keeps video playback manual. TopologyMark carries the converging-route motif into section labels, project numbers and the footer; the process timeline, project-index interactions and subtle media corner framing share the same language. See QA-TOPOLOGY.txt for Phase 2 validation.
+
+Featured projects use three different compositions. The first three engineering highlights and the existing estimated metric are visible; native keyboard-accessible details retain full descriptions and remaining proof points. More Projects is a divided, expandable index with all original technologies and capabilities. No new dependencies or media were introduced. See QA-REDESIGN.txt for the latest local checks; QA-REPORT.txt describes the previous design.
 
 ## Scope and next step
 
@@ -33,7 +41,7 @@ All page sections are implemented, including About, Contact, and Footer. Feature
 
 Real contact links are configured centrally in `src/data/contact.ts`: endidyfreim@gmail.com, Telegram @PackChoOi, GitHub GarnikSacsha, and LinkedIn denys-yefimenko. Contact and Footer share this configuration. Email uses `mailto:`; external links use `noopener noreferrer`. Public project links remain optional and unset.
 
-More Projects is a compact text-led grid: Family Life OS, Dental Booking Platform, Dota 2 AI Coach (experimental), and Vacation Rental Booking Demo. Optional links and small posters render only when supplied; no fake URLs, impact estimates, or long capability lists appear on these cards. Family Life OS and Dental recordings remain untouched in the originals folder and are not copied or loaded by this section. The process uses five numbered steps, vertical on smaller screens and horizontal on wide desktops. Six capability groups describe the broader toolkit without implying every project uses each technology.
+More Projects is a compact expandable project index: Family Life OS, Dental Booking Platform, Dota 2 AI Coach (experimental), and Vacation Rental Booking Demo. Optional links and small posters render only when supplied; no fake URLs or impact estimates appear in the index; technologies and capabilities are available on expansion. Family Life OS and Dental recordings remain untouched in the originals folder and are not copied or loaded by this section. The process uses five numbered steps, vertical on smaller screens and horizontal on wide desktops. Six capability groups describe the broader toolkit without implying every project uses each technology.
 
 Real demos are copied from `D:\Aivora\Projects\` into the three featured asset folders; originals remain untouched. MP4 is the required minimum, WebM is preferred but optional, and posters are recommended. See `src/assets/projects/README.md` for the exact source mappings, generated media, and replacement instructions. Only add public project links when approved and available.
 
