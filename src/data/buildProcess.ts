@@ -1,12 +1,12 @@
 import type { BuildStep } from '../lib/types'
 
 export const buildProcess = {
-  introduction: 'I use AI-assisted development to iterate faster while keeping architecture, implementation decisions, debugging, testing, and final product quality under control.',
+  introduction: 'A simple process without agency overhead. You talk directly to the person who builds your product.',
   steps: [
-    { number: '01', title: 'Understand the problem', description: 'Clarify the workflow, users, constraints, and what should actually be automated.' },
-    { number: '02', title: 'Design the architecture', description: 'Define data flow, backend boundaries, integrations, storage, roles, and failure cases.' },
-    { number: '03', title: 'Build with AI-assisted workflow', description: 'Use AI-assisted tools to speed up implementation, research, refactoring, and repetitive development tasks.' },
-    { number: '04', title: 'Test and validate', description: 'Test critical flows, edge cases, integrations, and responsive behavior.' },
-    { number: '05', title: 'Deploy and iterate', description: 'Deploy, observe, fix, and continue iterating.' },
+    { number: '01', title: 'Message', description: 'Tell me which process takes too much time. A short Telegram message is enough to start.' },
+    { number: '02', title: 'Call', description: 'A short call to understand your workflow, your users and what is worth automating first.' },
+    { number: '03', title: 'Proposal', description: 'A clear scope, timeline and price — agreed before any work starts.' },
+    { number: '04', title: 'Build', description: 'You see working progress along the way, not just reports, and your feedback goes straight into the product.' },
+    { number: '05', title: 'Launch', description: 'Deployment, testing on real scenarios, and fixes for whatever comes up after launch.' },
   ] satisfies readonly BuildStep[],
 }

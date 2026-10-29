@@ -1,4 +1,4 @@
-export type SectionId = 'work' | 'more-projects' | 'how-i-build' | 'stack' | 'about' | 'contact'
+export type SectionId = 'work' | 'more-projects' | 'services' | 'how-i-build' | 'stack' | 'about' | 'contact'
 
 export interface SectionContent {
   id: SectionId
@@ -34,6 +34,10 @@ export interface FeaturedProject extends ProjectBase {
   status: 'project'
   type: string
   description: string
+  /** Client-facing problem statement shown in the case study. */
+  problem: string
+  /** Client-facing outcome of the delivered workflow. */
+  result: string
   proofPoints: readonly string[]
   tags: readonly string[]
   stack?: {
@@ -74,6 +78,13 @@ export interface MoreProject {
   demoUrl?: `https://${string}`
   githubUrl?: `https://${string}`
   poster?: { src: string; alt: string }
+}
+
+export interface Service {
+  id: string
+  title: string
+  description: string
+  examples: readonly { label: string; href: `#${string}` }[]
 }
 
 export interface BuildStep {

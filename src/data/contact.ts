@@ -3,8 +3,8 @@ import type { ContactChannel, ContactLink, SocialLink } from '../lib/types'
 // Central contact configuration. Email accepts a bare address; social entries
 // accept full HTTPS URLs. Unset or invalid values never render as links.
 export const contactDetails: Record<ContactChannel, string | undefined> = {
-  email: 'endidyfreim@gmail.com',
   telegram: 'https://t.me/PackChoOi',
+  email: 'endidyfreim@gmail.com',
   linkedin: 'https://www.linkedin.com/in/denys-yefimenko',
   github: 'https://github.com/GarnikSacsha',
 }

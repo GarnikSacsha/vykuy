@@ -44,7 +44,7 @@ a:hover { color:var(--accent-cyan); }
 }
 @media(max-width:540px) {
  .container { width:calc(100% - 40px); }.header-layout { min-height:80px; }.wordmark { font-size:23px; align-items:center; }.wordmark span { font-size:14px; }
- .header-nav-list { gap:18px; }.header-nav-link { font-size:11px; gap:5px; }
+ .header-nav-list { gap:18px; }.header-nav-optional { display:none; }.header-nav-link { font-size:11px; gap:5px; }
  .content-section { padding-block:65px; }.section-title { font-size:38px; }.section-body { margin-top:35px; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none!important; transition:none!important; } }

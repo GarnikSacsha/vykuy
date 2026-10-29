@@ -4,6 +4,14 @@ import type { MoreProject } from '../lib/types'
 // Capabilities are retained as content data, not rendered as long card lists.
 export const moreProjects: readonly MoreProject[] = [
   {
+    id: 'mama-prybrala',
+    title: 'Mama Prybrala',
+    type: 'Client project / Launched',
+    description: 'Telegram ordering bot for a cleaning service: instant price calculation, lead intake, booking validation, admin notifications and Google Sheets CRM sync. Used in production by the client; the business has since closed.',
+    capabilities: ['Instant price calculation', 'Lead intake', 'Booking validation', 'Admin notifications', 'Google Sheets CRM sync'],
+    tags: ['Python', 'aiogram', 'Google Sheets', 'PostgreSQL'],
+  },
+  {
     id: 'family-life-os',
     title: 'Family Life OS',
     type: 'Personal Product',

@@ -14,7 +14,8 @@
 .project-details summary { display:flex; justify-content:space-between; min-height:48px; align-items:center; border-bottom:1px solid #555; font-size:13px; list-style:none; }
 summary::-webkit-details-marker { display:none; }
 .project-details summary span { transition:transform .2s; }
-.project-details[open] summary span { transform:rotate(90deg); }
+.project-details[open] summary .details-toggle { transform:rotate(45deg); }
+.details-toggle { font-size:18px; line-height:1; }
 .details-content { padding-block:20px; color:var(--text-secondary); font-size:14px; }
 .details-content p+p,.details-content ul { margin-top:16px; }.details-content li { margin-top:8px; }
 .project-impact { border-left:1px solid var(--border); padding-left:35px; align-self:start; }
@@ -57,3 +58,13 @@ summary::-webkit-details-marker { display:none; }
  .project-impact { padding:22px 0 0; border-left:0; border-top:1px solid var(--border); width:100%; }
  .project-impact-metric { font-size:32px; }.project-impact-disclaimer { max-width:none; }
 }
+
+/* Client-facing case structure: problem → what I built → result. */
+.project-story { display:grid; gap:26px; }
+.project-story .eyebrow { margin-bottom:10px; }
+.project-story-text { font-size:14px; line-height:1.75; color:var(--text-secondary); max-width:520px; }
+.project-story .project-proof { margin-top:0; }
+.project-story-result { color:var(--text-primary); }
+.project-links { display:flex; flex-wrap:wrap; gap:4px 32px; margin-top:12px; }
+.impact-footnote { margin-top:70px; padding-top:20px; border-top:1px solid var(--border); color:var(--text-secondary); font-size:11px; }
+@media(max-width:600px) { .impact-footnote { margin-top:50px; } }

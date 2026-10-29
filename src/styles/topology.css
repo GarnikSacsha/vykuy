@@ -8,10 +8,12 @@
 .hero-title>span:last-child { margin-left:5%; }
 .hero-period { color:var(--text-primary); }
 .hero-system-layout { display:grid; grid-template-columns:1.2fr 1fr; gap:8%; align-items:center; margin-top:16px; }
-.hero-support { padding:25px 0 30px; max-width:360px; }
+.hero-support { padding:25px 0 30px; max-width:420px; }
 .hero-principle { font-size:clamp(20px,2vw,28px); line-height:1.4; letter-spacing:-.035em; margin-bottom:23px; }
 .hero-description { color:var(--text-secondary); font-size:14px; line-height:1.85; }
-.hero-github { margin-top:22px; }
+.hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:8px 36px; margin-top:26px; }
+.hero-cta { border-bottom-color:var(--accent-cyan); gap:18px; }
+.hero-cta:hover { color:var(--accent-cyan); }
 .hero-footnote { display:flex; justify-content:space-between; gap:20px; border-top:1px solid var(--border); padding-top:18px; color:var(--text-secondary); font-size:10px; letter-spacing:.06em; margin-top:25px; }
 .hero-footnote a { min-height:44px; display:inline-flex; gap:25px; }
 .hero-role,.hero-title,.hero-support { animation:arrive .85s cubic-bezier(.2,.65,.3,1) both; }
@@ -79,7 +81,7 @@
  .topology-structure { stroke-opacity:.1; }.topology-caption { font-size:8px; padding-top:12px; }
  .hero-support { display:grid; grid-template-columns:1fr auto; gap:14px; max-width:none; padding:0; }
  .hero-principle { grid-column:1/-1; font-size:21px; margin-bottom:0; }.hero-principle br { display:none; }.hero-principle br::after { content:' '; }
- .hero-description { font-size:13px; }.hero-github { margin-top:0; align-self:end; gap:12px; }
+ .hero-description { grid-column:1/-1; font-size:13px; }.hero-actions { grid-column:1/-1; margin-top:4px; gap:4px 28px; }
  .hero-footnote { font-size:9px; margin-top:30px; }.hero-footnote>span { max-width:165px; }.hero-footnote a { gap:10px; white-space:nowrap; }
 }
 @media(max-width:540px) { .hero { min-height:calc(100svh - 80px); }.hero-content { padding-top:42px; } }

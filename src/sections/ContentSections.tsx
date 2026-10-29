@@ -12,7 +12,7 @@ export function About() {
 }
 
 export function Contact() {
-  const primary = contactLinks.find(link => link.channel !== 'github')
+  const primary = contactLinks.find(link => link.channel === 'telegram') ?? contactLinks[0]
   return <div className="contact-section"><Section content={sections.contact}>
     {contactLinks.length > 0 && <div className="contact-actions">
       {contactLinks.map(link => {

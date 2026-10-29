@@ -18,8 +18,10 @@ export const projects: readonly Project[] = [
     slug: 'pitstop',
     status: 'project',
     title: 'Pitstop',
-    type: 'Product / MVP',
+    type: 'Booking platform / MVP',
     description: 'Online booking and service management platform for auto repair shops. Customers choose a service and available time slot, book an appointment, and track its status. Shop owners manage schedules, confirm or reschedule bookings, track arrivals and completed jobs, and record payments.',
+    problem: 'Auto repair shops take bookings by phone and messengers, keep the schedule by hand, and lose track of which car is at which stage.',
+    result: 'Customers book a free slot themselves, and the owner sees the whole day — bookings, car status and payments — in one place.',
     proofPoints: [
       'Online booking with available time slots',
       'Service and schedule management',
@@ -28,7 +30,7 @@ export const projects: readonly Project[] = [
       'Payment tracking',
       'Shared backend architecture with separate product configuration and isolated studio data',
     ],
-    tags: ['React', 'TypeScript', 'FastAPI', 'Supabase', 'PostgreSQL', 'OpenAI', 'PWA', 'Docker', 'Railway'],
+    tags: ['React', 'FastAPI', 'PostgreSQL', 'OpenAI', 'PWA'],
     // Detailed confirmed stack; only the concise tags above are displayed.
     stack: {
       frontend: ['React', 'TypeScript', 'Vite', 'Astryx components', 'PWA support'],
@@ -61,8 +63,10 @@ export const projects: readonly Project[] = [
     slug: 'horeca-training',
     status: 'project',
     title: 'HORECA Training Platform',
-    type: 'Product / MVP',
+    type: 'Training platform / MVP',
     description: 'Training platform for HORECA teams with menu learning, exams, progress tracking, and location-based access.',
+    problem: 'Every new waiter or barista needs a manager to explain the menu and standards again — and there is no way to check what they actually learned.',
+    result: 'Staff learn the menu on their phones and pass exams, while managers see progress for every employee and location.',
     proofPoints: [
       'Role-based access',
       'Multi-location architecture',
@@ -70,7 +74,7 @@ export const projects: readonly Project[] = [
       'Exams and progress tracking',
       'Responsive / PWA-oriented product flow',
     ],
-    tags: ['React', 'TypeScript', 'FastAPI', 'PostgreSQL', 'PWA'],
+    tags: ['React', 'FastAPI', 'PostgreSQL', 'PWA'],
     impact: {
       label: 'Estimated manager time saved',
       metric: '~1–2 hours / new employee',
@@ -92,8 +96,10 @@ export const projects: readonly Project[] = [
     slug: 'access-flow',
     status: 'project',
     title: 'Access Flow',
-    type: 'Deployed Automation Product',
+    type: 'Telegram automation / Deployed',
     description: 'Telegram access automation that verifies payments, grants private-channel access, monitors subscription status, and removes expired users automatically.',
+    problem: 'Paid Telegram communities check payments by hand, send invite links manually and forget to remove members whose subscription has ended.',
+    result: 'Payment, access and removal at expiry run on their own — no admin needs to check anything.',
     proofPoints: [
       'Payment verification flow',
       'Automatic private-channel access',
@@ -101,9 +107,9 @@ export const projects: readonly Project[] = [
       'Automatic removal / access control',
       'Deployed working end-to-end flow',
     ],
-    tags: ['Python', 'Telegram', 'Automation', 'PostgreSQL', 'Integrations'],
+    tags: ['Python', 'Telegram API', 'PostgreSQL', 'Payments'],
     impact: {
-      label: 'Potential admin time saved',
+      label: 'Estimated admin time saved',
       metric: '~3–5 min / subscriber',
       description: 'Removes manual payment verification, access delivery and subscription cleanup from the admin workflow.',
       supportingCopy: 'At 100 subscription actions per month, this can automate roughly 5–8 hours of repetitive admin work.',

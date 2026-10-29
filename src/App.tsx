@@ -4,6 +4,7 @@ import { Hero } from './sections/Hero'
 import { About, Contact } from './sections/ContentSections'
 import { MoreProjects } from './sections/MoreProjects'
 import { HowIBuild } from './sections/HowIBuild'
+import { Services } from './sections/Services'
 import { Stack } from './sections/Stack'
 import { FeaturedWork } from './sections/FeaturedWork'
 import { Footer } from './sections/Footer'
@@ -31,6 +32,7 @@ export function App() {
       <Hero />
       <FeaturedWork />
       <MoreProjects />
+      <Services />
       <HowIBuild />
       <Stack />
       <About />
