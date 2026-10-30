@@ -15,7 +15,7 @@ export const services: readonly Service[] = [
   {
     id: 'telegram',
     title: 'Telegram bots & payment automation',
-    description: 'Bots that take orders, calculate prices, verify payments, grant access to private channels and notify your team — so requests stop getting lost in chats.',
+    description: 'Bots that take orders, calculate prices, verify payments, grant access to private channels and notify your team, so requests stop getting lost in chats.',
     examples: [
       { label: 'Access Flow', href: '#access-flow' },
       { label: 'Mama Prybrala', href: '#mama-prybrala' },

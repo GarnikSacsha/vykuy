@@ -7,6 +7,10 @@ import '../styles/closing-sections.css'
 export function About() {
   return <div className="about-section"><Section content={sections.about}>
     <div className="about-copy">{aboutContent.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
+    <div className="about-tools">
+      <p className="eyebrow">Tools I work with</p>
+      <ul aria-label="Tools I work with">{aboutContent.tools.map(tool => <li key={tool}>{tool}</li>)}</ul>
+    </div>
     <ul className="about-metadata">{aboutContent.metadata.map(item => <li key={item}>{item}</li>)}</ul>
   </Section></div>
 }

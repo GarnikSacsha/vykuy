@@ -1,23 +1,4 @@
-/* VYKUY's routes converge into the work link; no perspective plane or grid. */
-.hero { position:relative; min-height:calc(100svh - 110px); display:flex; align-items:center; }
-.hero-content { padding-block:64px 24px; }
-.hero-role { display:flex; flex-wrap:wrap; gap:14px; margin:0 0 30px 16%; }
-.hero-role span { color:var(--text-secondary); }
-.hero-title { margin-left:16%; font-size:clamp(56px,7.2vw,112px); line-height:1.04; font-weight:400; letter-spacing:-.065em; }
-.hero-title>span { display:block; }
-.hero-title>span:last-child { margin-left:5%; }
-.hero-period { color:var(--text-primary); }
-.hero-system-layout { display:grid; grid-template-columns:1.2fr 1fr; gap:8%; align-items:center; margin-top:16px; }
-.hero-support { padding:25px 0 30px; max-width:420px; }
-.hero-principle { font-size:clamp(20px,2vw,28px); line-height:1.4; letter-spacing:-.035em; margin-bottom:23px; }
-.hero-description { color:var(--text-secondary); font-size:14px; line-height:1.85; }
-.hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:8px 36px; margin-top:26px; }
-.hero-cta { border-bottom-color:var(--accent-cyan); gap:18px; }
-.hero-cta:hover { color:var(--accent-cyan); }
-.hero-footnote { display:flex; justify-content:space-between; gap:20px; border-top:1px solid var(--border); padding-top:18px; color:var(--text-secondary); font-size:10px; letter-spacing:.06em; margin-top:25px; }
-.hero-footnote a { min-height:44px; display:inline-flex; gap:25px; }
-.hero-role,.hero-title,.hero-support { animation:arrive .85s cubic-bezier(.2,.65,.3,1) both; }
-.hero-title { animation-delay:.08s; }.hero-support { animation-delay:.16s; }
+/* Hero styles live in hero.css. */
 
 .system-topology { min-width:0; max-width:640px; width:100%; }
 .topology-drawing { position:relative; aspect-ratio:640 / 400; }
@@ -61,28 +42,16 @@
 .build-step:last-child .process-connector { width:100%; }
 .build-step::before { top:-12px; width:5px; height:5px; border-radius:0; }
 
-@media(min-width:1600px) { .hero-content { padding-top:85px; }.hero-system-layout { margin-top:30px; } }
 @media(max-width:1000px) {
- .hero-role,.hero-title { margin-left:6%; }.hero-title { font-size:clamp(55px,7.8vw,80px); }
- .hero-system-layout { gap:5%; grid-template-columns:1.2fr 1fr; margin-top:35px; }
- .hero-support { padding-block:15px; }.hero-principle { font-size:22px; }
  .topology-annotations { font-size:10px; letter-spacing:1px; }
 }
 @media(max-width:900px) {
- .hero { min-height:calc(100svh - 90px); }.hero-content { padding-top:55px; }
  .process-connector { display:none; }.build-step::before { left:-3px; top:8px; }
 }
 @media(max-width:600px) {
- .hero-role,.hero-title { margin-left:0; }.hero-title { font-size:clamp(36px,8.7vw,51px); }.hero-title>span:last-child { margin-left:0; }
- .hero-role { font-size:9px; gap:7px; margin-bottom:25px; }
- .hero-system-layout { grid-template-columns:1fr; gap:24px; margin-top:25px; }
  .system-topology { max-width:410px; margin-inline:auto; }
  .system-topology .orbit-link { width:104px; height:104px; font-size:10px; gap:7px; }.system-topology .orbit-link svg { width:32px; height:32px; }
  .topology-structure { stroke-opacity:.1; }.topology-caption { font-size:8px; padding-top:12px; }
- .hero-support { display:grid; grid-template-columns:1fr auto; gap:14px; max-width:none; padding:0; }
- .hero-principle { grid-column:1/-1; font-size:21px; margin-bottom:0; }.hero-principle br { display:none; }.hero-principle br::after { content:' '; }
- .hero-description { grid-column:1/-1; font-size:13px; }.hero-actions { grid-column:1/-1; margin-top:4px; gap:4px 28px; }
- .hero-footnote { font-size:9px; margin-top:30px; }.hero-footnote>span { max-width:165px; }.hero-footnote a { gap:10px; white-space:nowrap; }
 }
-@media(max-width:540px) { .hero { min-height:calc(100svh - 80px); }.hero-content { padding-top:42px; } }
 @media(prefers-reduced-motion:reduce) { .topology-pulse { display:none; }.topology-node { opacity:.4; } }
+

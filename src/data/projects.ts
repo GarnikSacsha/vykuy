@@ -21,7 +21,7 @@ export const projects: readonly Project[] = [
     type: 'Booking platform / MVP',
     description: 'Online booking and service management platform for auto repair shops. Customers choose a service and available time slot, book an appointment, and track its status. Shop owners manage schedules, confirm or reschedule bookings, track arrivals and completed jobs, and record payments.',
     problem: 'Auto repair shops take bookings by phone and messengers, keep the schedule by hand, and lose track of which car is at which stage.',
-    result: 'Customers book a free slot themselves, and the owner sees the whole day — bookings, car status and payments — in one place.',
+    result: 'Customers book a free slot themselves, and the owner sees the whole day in one place: bookings, car status and payments.',
     proofPoints: [
       'Online booking with available time slots',
       'Service and schedule management',
@@ -65,7 +65,7 @@ export const projects: readonly Project[] = [
     title: 'HORECA Training Platform',
     type: 'Training platform / MVP',
     description: 'Training platform for HORECA teams with menu learning, exams, progress tracking, and location-based access.',
-    problem: 'Every new waiter or barista needs a manager to explain the menu and standards again — and there is no way to check what they actually learned.',
+    problem: 'Every new waiter or barista needs a manager to explain the menu and standards again, and there is no way to check what they actually learned.',
     result: 'Staff learn the menu on their phones and pass exams, while managers see progress for every employee and location.',
     proofPoints: [
       'Role-based access',
@@ -99,7 +99,7 @@ export const projects: readonly Project[] = [
     type: 'Telegram automation / Deployed',
     description: 'Telegram access automation that verifies payments, grants private-channel access, monitors subscription status, and removes expired users automatically.',
     problem: 'Paid Telegram communities check payments by hand, send invite links manually and forget to remove members whose subscription has ended.',
-    result: 'Payment, access and removal at expiry run on their own — no admin needs to check anything.',
+    result: 'Payment, access and removal at expiry run on their own. Nobody has to check anything by hand.',
     proofPoints: [
       'Payment verification flow',
       'Automatic private-channel access',

@@ -32,7 +32,7 @@ export function ProjectCaseStudy({ project, index }: { project: Project; index: 
           </div>
           <div>
             <p className="eyebrow">What I built</p>
-            <ul className="project-proof" aria-label={project.title + ' — what I built'}>
+            <ul className="project-proof" aria-label={project.title + ': what I built'}>
               {project.proofPoints.slice(0, 3).map(point => <li key={point}>{point}</li>)}
             </ul>
           </div>
