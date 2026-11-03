@@ -37,7 +37,7 @@ Featured projects use three different compositions. The first three engineering 
 
 ## Scope and next step
 
-All page sections are implemented, including About, Contact, and Footer. Featured Work is ordered Pitstop, HORECA Training Platform, Access Flow. Pitstop uses the supplied final description, six proof points, and confirmed stack. Impact estimates remain explicitly labeled as estimates. No visible TODO content remains.
+All page sections are implemented, including About, Contact, and Footer. Featured Work is ordered Saloed, Pitstop, HORECA Training Platform, Access Flow. Each featured project sets its composition with `layout` (1, 2, or 3 for portrait recordings). Pitstop uses the supplied final description, six proof points, and confirmed stack. Impact estimates remain explicitly labeled as estimates. No visible TODO content remains.
 
 Real contact links are configured centrally in `src/data/contact.ts`: endidyfreim@gmail.com, Telegram @PackChoOi, GitHub GarnikSacsha, and LinkedIn denys-yefimenko. Contact and Footer share this configuration. Email uses `mailto:`; external links use `noopener noreferrer`. Public project links remain optional and unset.
 

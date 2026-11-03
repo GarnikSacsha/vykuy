@@ -53,6 +53,8 @@ export interface FeaturedProject extends ProjectBase {
   githubUrl?: `https://${string}`
   media: ProjectMedia
   impact?: ProjectImpact
+  /** Case study composition; 3 is designed for portrait recordings. Defaults to list position. */
+  layout?: 1 | 2 | 3
 }
 
 export type Project = FeaturedProject | (ProjectBase & { status: 'todo' })

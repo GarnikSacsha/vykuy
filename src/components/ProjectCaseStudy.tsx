@@ -15,7 +15,7 @@ export function ProjectCaseStudy({ project, index }: { project: Project; index: 
   const summary = project.description.split('. ')[0].replace(/\.$/, '') + '.'
 
   return (
-    <article id={project.slug} className={`project-study project-study--${index + 1}`} aria-labelledby={project.id + '-title'}>
+    <article id={project.slug} className={`project-study project-study--${project.layout ?? index + 1}`} aria-labelledby={project.id + '-title'}>
       <div className="project-study-copy">
         <p className="project-type"><span className="project-index-mark"><TopologyMark />{String(index + 1).padStart(2, '0')}</span>{project.type}</p>
         <h3 id={project.id + '-title'} className="project-title">{project.title}</h3>

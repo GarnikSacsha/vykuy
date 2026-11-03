@@ -4,6 +4,7 @@ The active featured projects use copied local demos. Asset paths below are relat
 
 | Project | Preferred video | MP4 fallback | Poster |
 | --- | --- | --- | --- |
+| Saloed | `saloed/demo.webm` | `saloed/demo.mp4` | `saloed/poster.webp` |
 | Pitstop | `pitstop/demo.webm` | `pitstop/demo.mp4` | `pitstop/poster.webp` |
 | HORECA Training Platform | `horeca-training/demo.webm` | `horeca-training/demo.mp4` | `horeca-training/poster.webp` |
 | Access Flow | `access-flow/demo.webm` | `access-flow/demo.mp4` | `access-flow/poster.webp` |
@@ -17,6 +18,7 @@ Original recordings live in `D:\Aivora\Projects\` and must not be modified, rena
 - `PitStop.mp4` → `pitstop/demo.mp4`
 - `HoReCaFam-lounge.mp4` → `horeca-training/demo.mp4`
 - `Acces Flow.mp4` → `access-flow/demo.mp4`
+- `D:\Saloed\output\portfolio-video\saloed-case.mp4`, `saloed-case.webm`, `saloed-poster.webp` → `saloed/demo.mp4`, `saloed/demo.webm`, `saloed/poster.webp` (byte-for-byte copies of the prepared portfolio cut, 1920×1080, 35 s, no audio)
 
 `Dental Booking.mp4` and `Family Life OS.mp4` remain untouched for future use. The website never references the originals folder at runtime.
 

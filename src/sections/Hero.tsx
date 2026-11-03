@@ -7,6 +7,7 @@ import '../styles/hero.css'
 
 // Short client-facing labels for the hero index; full copy lives in the case studies.
 const indexNotes: Record<string, string> = {
+  saloed: 'Website and online booking for a massage therapist',
   pitstop: 'Online booking for auto repair shops',
   'horeca-training': 'Staff training for restaurants and cafés',
   'access-flow': 'Paid access to private Telegram channels',

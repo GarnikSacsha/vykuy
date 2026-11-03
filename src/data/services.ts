@@ -7,6 +7,7 @@ export const services: readonly Service[] = [
     title: 'Online booking systems',
     description: 'A booking site or app for service businesses: available time slots, confirmations and rescheduling, plus an admin panel where the owner sees the whole schedule.',
     examples: [
+      { label: 'Saloed', href: '#saloed' },
       { label: 'Pitstop', href: '#pitstop' },
       { label: 'Dental Booking', href: '#dental-booking' },
       { label: 'Vacation Rental', href: '#vacation-rental-booking' },

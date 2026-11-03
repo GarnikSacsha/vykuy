@@ -14,6 +14,52 @@ function asset(path: string): string | undefined {
 
 export const projects: readonly Project[] = [
   {
+    id: 'saloed',
+    slug: 'saloed',
+    status: 'project',
+    title: 'Saloed',
+    type: 'Client website + booking / V1',
+    description: 'Premium personal website with online booking for a massage therapist in Ireland. Clients browse services, pick an available time slot and request an appointment; the therapist confirms, reschedules or cancels bookings and manages working hours in a private admin panel.',
+    problem: 'A private massage therapy practice took every booking through calls and messages, and the website had to feel like a wellness brand rather than a typical clinic.',
+    result: 'Clients book a free slot online in a few steps, and the therapist manages services, schedule and appointments from one admin panel.',
+    proofPoints: [
+      'Online booking with generated time slots',
+      'Admin panel for appointments, services and working hours',
+      'Double-booking protection enforced in Python and PostgreSQL',
+      'Editorial wellness brand site with a mobile-first layout',
+      'Email notifications through a reliable outbox worker',
+      'Bot protection with Cloudflare Turnstile',
+      'End-to-end Playwright tests running in CI',
+    ],
+    tags: ['React', 'TypeScript', 'FastAPI', 'PostgreSQL'],
+    stack: {
+      frontend: ['React', 'TypeScript', 'Vite'],
+      backend: ['Python', 'FastAPI', 'Pydantic', 'SQLAlchemy', 'Alembic'],
+      databaseAuthStorage: ['PostgreSQL'],
+      ai: [],
+      delivery: ['Cloudflare Pages', 'Docker', 'Railway', 'Resend', 'GitHub Actions'],
+      tooling: ['Playwright', 'pytest', 'Vitest'],
+      architecture: 'React frontend on Cloudflare Pages; FastAPI API and outbox worker on Railway with private PostgreSQL. Booking rules live in Python, the database is the last line of integrity.',
+    },
+    demoUrl: 'https://saloed-staging.pages.dev', // Staging URL; replace with the production domain when it is live.
+    githubUrl: undefined, // Private repository.
+    impact: {
+      label: 'Estimated time saved',
+      metric: '~5–10 min / booking',
+      description: 'Replaces back-and-forth calls and messages about free time with self-service booking.',
+      supportingCopy: 'Clients see real availability and request a slot themselves, so the therapist only confirms instead of negotiating a time for every appointment.',
+      disclaimer: 'Workflow-based estimate, not measured production results.',
+    },
+    media: {
+      webm: asset('saloed/demo.webm'),
+      mp4: asset('saloed/demo.mp4'),
+      poster: asset('saloed/poster.webp'),
+      captionsSrc: asset('saloed/captions.vtt'),
+      aspectRatio: '16 / 9',
+    },
+    layout: 1,
+  },
+  {
     id: 'pitstop',
     slug: 'pitstop',
     status: 'project',
@@ -57,6 +103,7 @@ export const projects: readonly Project[] = [
       captionsSrc: asset('pitstop/captions.vtt'),
       aspectRatio: '16 / 9',
     },
+    layout: 2,
   },
   {
     id: 'horeca-training',
@@ -90,6 +137,7 @@ export const projects: readonly Project[] = [
       captionsSrc: asset('horeca-training/captions.vtt'),
       aspectRatio: '16 / 9',
     },
+    layout: 1,
   },
   {
     id: 'access-flow',
@@ -122,5 +170,6 @@ export const projects: readonly Project[] = [
       captionsSrc: asset('access-flow/captions.vtt'),
       aspectRatio: '9 / 16',
     },
+    layout: 3,
   },
 ]
