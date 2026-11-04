@@ -137,7 +137,7 @@ export const projects: readonly Project[] = [
       captionsSrc: asset('horeca-training/captions.vtt'),
       aspectRatio: '16 / 9',
     },
-    layout: 1,
+    layout: 2,
   },
   {
     id: 'access-flow',
