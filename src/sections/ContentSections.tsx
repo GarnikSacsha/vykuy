@@ -2,14 +2,22 @@ import { Button } from '../components/Button'
 import { Section } from '../components/Section'
 import { contactLinks } from '../data/contact'
 import { aboutContent, sections } from '../data/site'
+import aboutPhoto from '../assets/about/denys.webp'
 import '../styles/closing-sections.css'
 
 export function About() {
   return <div className="about-section"><Section content={sections.about}>
-    <div className="about-copy">{aboutContent.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
-    <div className="about-tools">
-      <p className="eyebrow">Tools I work with</p>
-      <ul aria-label="Tools I work with">{aboutContent.tools.map(tool => <li key={tool}>{tool}</li>)}</ul>
+    <div className="about-layout">
+      <figure className="about-photo">
+        <img src={aboutPhoto} alt="Denys Yefimenko with his dog" width={840} height={1050} loading="lazy" decoding="async" />
+      </figure>
+      <div className="about-main">
+        <div className="about-copy">{aboutContent.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
+        <div className="about-tools">
+          <p className="eyebrow">Tools I work with</p>
+          <ul aria-label="Tools I work with">{aboutContent.tools.map(tool => <li key={tool}>{tool}</li>)}</ul>
+        </div>
+      </div>
     </div>
     <ul className="about-metadata">{aboutContent.metadata.map(item => <li key={item}>{item}</li>)}</ul>
   </Section></div>
