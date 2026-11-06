@@ -14,10 +14,10 @@ function asset(path: string): string | undefined {
 
 export const projects: readonly Project[] = [
   {
-    id: 'saloed',
-    slug: 'saloed',
+    id: 'louiemassage',
+    slug: 'louiemassage',
     status: 'project',
-    title: 'Saloed',
+    title: 'Louie Massage',
     type: 'Client website + booking / V1',
     description: 'Premium personal website with online booking for a massage therapist in Ireland. Clients browse services, pick an available time slot and request an appointment; the therapist confirms, reschedules or cancels bookings and manages working hours in a private admin panel.',
     problem: 'A private massage therapy practice took every booking through calls and messages, and the website had to feel like a wellness brand rather than a typical clinic.',
@@ -41,7 +41,7 @@ export const projects: readonly Project[] = [
       tooling: ['Playwright', 'pytest', 'Vitest'],
       architecture: 'React frontend on Cloudflare Pages; FastAPI API and outbox worker on Railway with private PostgreSQL. Booking rules live in Python, the database is the last line of integrity.',
     },
-    demoUrl: 'https://saloed-staging.pages.dev', // Staging URL; replace with the production domain when it is live.
+    demoUrl: 'https://louiemassage.com/',
     githubUrl: undefined, // Private repository.
     impact: {
       label: 'Estimated time saved',
@@ -51,10 +51,10 @@ export const projects: readonly Project[] = [
       disclaimer: 'Workflow-based estimate, not measured production results.',
     },
     media: {
-      webm: asset('saloed/demo.webm'),
-      mp4: asset('saloed/demo.mp4'),
-      poster: asset('saloed/poster.webp'),
-      captionsSrc: asset('saloed/captions.vtt'),
+      webm: asset('louiemassage/demo.webm'),
+      mp4: asset('louiemassage/demo.mp4'),
+      poster: asset('louiemassage/poster.webp'),
+      captionsSrc: asset('louiemassage/captions.vtt'),
       aspectRatio: '16 / 9',
     },
     layout: 2,
