@@ -68,3 +68,10 @@ summary::-webkit-details-marker { display:none; }
 .project-links { display:flex; flex-wrap:wrap; gap:4px 32px; margin-top:12px; }
 .impact-footnote { margin-top:70px; padding-top:20px; border-top:1px solid var(--border); color:var(--text-secondary); font-size:12px; }
 @media(max-width:600px) { .impact-footnote { margin-top:50px; } }
+
+/* Static screenshot gallery (projects without a video walkthrough). */
+.project-screenshots { display:grid; gap:28px; }
+.project-screenshot-frame { position:relative; width:100%; background:var(--surface); border:1px solid var(--border); overflow:hidden; }
+.project-screenshot-frame img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; }
+.project-screenshot:nth-child(2) { width:min(100%, 560px); margin-left:auto; }
+@media(max-width:600px) { .project-screenshots { gap:22px; } .project-screenshot:nth-child(2) { width:100%; } }

@@ -164,12 +164,24 @@ export const projects: readonly Project[] = [
       disclaimer: 'Workflow-based estimate, not measured production analytics.',
     },
     media: {
-      webm: asset('access-flow/demo.webm'),
-      mp4: asset('access-flow/demo.mp4'),
-      poster: asset('access-flow/poster.webp'),
-      captionsSrc: asset('access-flow/captions.vtt'),
-      aspectRatio: '9 / 16',
+      // Screenshots of the current UI; customer IDs, usernames, TxIDs and payout details are masked.
+      screenshots: [
+        {
+          src: asset('access-flow/admin.webp'),
+          alt: 'Access Flow admin panel: subscriber totals, payment filters and a table of active subscriptions with masked customer data',
+          label: 'Admin panel',
+          width: 1575,
+          height: 1022,
+        },
+        {
+          src: asset('access-flow/checkout.webp'),
+          alt: 'Access Flow checkout: plan selection with EUR and USDT prices, crypto or card payment, and transaction hash submission',
+          label: 'Checkout',
+          width: 765,
+          height: 498,
+        },
+      ],
     },
-    layout: 3,
+    layout: 2,
   },
 ]

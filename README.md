@@ -63,4 +63,4 @@ The final domain is intentionally unset. Once selected, add a canonical link and
 
 ## Media and performance
 
-Keep real demos in `src/assets/projects/pitstop/`, `horeca-training/`, and `access-flow/` as `demo.webm`, `demo.mp4`, and `poster.webp`. See the asset README for encoding and replacement notes. Keep the per-project aspect ratio accurate to reserve space. Videos mount near visibility with preload disabled; posters load lazily. Reduced motion keeps playback manual. Fonts are local variable WOFF2 files with font-display swap. Vite hashes production assets; there are no third-party font or analytics requests.
+Keep real demos in `src/assets/projects/pitstop/` and `horeca-training/` as `demo.webm`, `demo.mp4`, and `poster.webp`. See the asset README for encoding and replacement notes. Keep the per-project aspect ratio accurate to reserve space. Videos mount near visibility with preload disabled; posters load lazily. Reduced motion keeps playback manual. Fonts are local variable WOFF2 files with font-display swap. Vite hashes production assets; there are no third-party font or analytics requests.

@@ -1,4 +1,5 @@
 import type { Project } from '../lib/types'
+import { ProjectScreenshots } from './ProjectScreenshots'
 import { ProjectVideo } from './ProjectVideo'
 import { TopologyMark } from './TopologyMark'
 
@@ -22,7 +23,9 @@ export function ProjectCaseStudy({ project, index }: { project: Project; index: 
         <p className="project-summary">{summary}</p>
       </div>
       <div className="project-study-media">
-        <ProjectVideo key={`${project.media.webm}-${project.media.mp4}-${project.media.poster}`} title={project.title} {...project.media} />
+        {project.media.screenshots?.some(shot => shot.src)
+          ? <ProjectScreenshots title={project.title} screenshots={project.media.screenshots} />
+          : <ProjectVideo key={`${project.media.webm}-${project.media.mp4}-${project.media.poster}`} title={project.title} {...project.media} />}
       </div>
       <div className="project-engineering">
         <div className="project-story">

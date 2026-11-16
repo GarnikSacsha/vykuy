@@ -13,6 +13,16 @@ export interface ProjectMedia {
   poster?: string
   captionsSrc?: string
   aspectRatio?: '16 / 10' | '16 / 9' | '9 / 16'
+  /** Static product screenshots shown instead of a video. */
+  screenshots?: readonly ProjectScreenshot[]
+}
+
+export interface ProjectScreenshot {
+  src?: string
+  alt: string
+  label: string
+  width: number
+  height: number
 }
 
 interface ProjectBase {
